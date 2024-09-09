@@ -5,14 +5,16 @@ __author__ = "730811558"
 
 def main_planner(guests: int) -> None:
     """The main calculating function, print all of the text."""
-    print("A Cozy Tea Party for " + str(guests) + " People!")
-    print("Tea Bags: " + str(tea_bags(people=guests)))
-    print("Treats: " + str(treats(people=guests)))
+    print(
+        "A Cozy Tea Party for " + str(guests) + " People!"
+    )  # prints a string for the amount of people
+    print("Tea Bags: " + str(tea_bags(people=guests)))  # prints the amount of tea bags
+    print("Treats: " + str(treats(people=guests)))  # prints the amount of treats
     print(
         "Cost: $"
         + str(
             cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))
-        )
+        )  # the amount of tea bags and the amount of treats put into the cost function
     )
 
 
@@ -32,4 +34,6 @@ def cost(tea_count: int, treat_count: int) -> float:
 
 
 if __name__ == "__main__":
-    main_planner(guests=int(input("How many guests are attending your tea party?")))
+    main_planner(
+        guests=int(input("How many guests are attending your tea party?"))
+    )  # asks for user input for amount of people
