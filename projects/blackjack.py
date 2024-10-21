@@ -62,7 +62,10 @@ def drawPile(s: list[int], c: list[int], h: list[int], d: list[int]) -> int:
             print(f"{draw} of Spades")
         if draw > 10:
             draw = 10
-        return draw
+        if draw >= 10:
+            return 10
+        else:
+            return draw
     elif rand == 2:
         draw = random.randint(1, len(c))
         if draw == 1:
@@ -75,7 +78,10 @@ def drawPile(s: list[int], c: list[int], h: list[int], d: list[int]) -> int:
             print("King of Clubs")
         else:
             print(f"{draw} of Clubs")
-        return draw
+        if draw >= 10:
+            return 10
+        else:
+            return draw
     elif rand == 3:
         draw = random.randint(1, len(h))
         if draw == 1:
@@ -88,7 +94,10 @@ def drawPile(s: list[int], c: list[int], h: list[int], d: list[int]) -> int:
             print("King of Hearts")
         else:
             print(f"{draw} of Hearts")
-        return draw
+        if draw >= 10:
+            return 10
+        else:
+            return draw
     else:
         draw = random.randint(1, len(d))
         if draw == 1:
@@ -101,7 +110,10 @@ def drawPile(s: list[int], c: list[int], h: list[int], d: list[int]) -> int:
             print("King of Diamonds")
         else:
             print(f"{draw} of Diamonds")
-        return draw
+        if draw >= 10:
+            return 10
+        else:
+            return draw
 
 
 def fSum(list: list[int]):
@@ -170,7 +182,7 @@ def play(s, c, h, d) -> int:
             print("Push!")
             return 2
         elif presult == 100 and dresult2 != 100:
-            print("Dealer Wins, You, Lose!")
+            print("Dealer Wins, You Bust!")
             return 0
         elif presult != 100 and dresult2 == 100:
             print("You Win, Dealer Busts!")
