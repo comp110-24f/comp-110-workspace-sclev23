@@ -1,6 +1,8 @@
 """Just experiment work."""
 
-
-def add_key_to_dicts(dicts: list[dict], key: str, value: int) -> None:
-    for d in dicts:
-        d[key] = value
+a_list: list[int] = []
+kids: int = 0
+for i in range(1, len(a_list), 2):
+    kids += 1
+print(len(a_list))
+print(kids)
